@@ -17,7 +17,7 @@ data class MovieDto(
     val vote_count: Int
 )
 
-fun MovieDto.toMovie(): Movie{
+fun MovieDto.toMovie(): Movie {
     return Movie(
         id = id,
         title = title,
