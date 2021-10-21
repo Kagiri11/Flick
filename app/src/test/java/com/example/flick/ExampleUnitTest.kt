@@ -1,7 +1,6 @@
 package com.example.flick
 
 import org.junit.Test
-
 import org.junit.Assert.*
 
 /**

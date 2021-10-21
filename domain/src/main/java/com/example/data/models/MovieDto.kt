@@ -24,6 +24,6 @@ fun MovieDto.toMovie(): Movie{
         posterPath = poster_path,
         releaseDate = release_date,
         overview = overview,
-        voteAverage =  vote_average
+        voteAverage = vote_average
     )
 }
