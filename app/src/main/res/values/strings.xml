@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Flick</string>
+    <string name="title_cache">Module Title</string>
+    <string name="title_checkout">Checkout</string>
+    <string name="title_home">Home</string>
+    <string name="title_network">Network</string>
+    <string name="title_repository">Repository</string>
 </resources>
