@@ -8,37 +8,37 @@ import com.example.repository.mappers.toDomain
 
 class MovieDataRepository(private val network: com.example.network.MovieNetworkService) : MovieDomainRepository {
 
-    override fun fetchMovieDetails(movieId: Int): Movie {
+    override suspend fun fetchMovieDetails(movieId: Int): Movie {
         val networkMovieDetails = network.fetchMovieDetails(movieId)
         return networkMovieDetails.toDomain()
     }
 
-    override fun fetchUpcomingMovies(): MoviesResponse {
+    override suspend fun fetchUpcomingMovies(): MoviesResponse {
         val networkUpcomingMovies = network.fetchUpcomingMovies()
         return networkUpcomingMovies.toDomain()
     }
 
-    override fun fetchTopRatedMovies(): MoviesResponse {
+    override suspend fun fetchTopRatedMovies(): MoviesResponse {
         val networkTopRatedMovies = network.fetchTopRatedMovies()
         return networkTopRatedMovies.toDomain()
     }
 
-    override fun fetchPopularMovies(): MoviesResponse {
+    override suspend fun fetchPopularMovies(): MoviesResponse {
         val networkPopularMovies = network.fetchPopularMovies()
         return networkPopularMovies.toDomain()
     }
 
-    override fun fetchSimilarMovies(movieId: Int): MoviesResponse {
+    override suspend fun fetchSimilarMovies(movieId: Int): MoviesResponse {
         val networkSimilarMovies = network.fetchSimilarMovies(movieId)
         return networkSimilarMovies.toDomain()
     }
 
-    override fun fetchMovieReviews(movieId: Int): ReviewsResponse {
+    override suspend fun fetchMovieReviews(movieId: Int): ReviewsResponse {
         val networkMovieReviews = network.fetchMovieReviews(movieId)
         return networkMovieReviews.toDomain()
     }
 
-    override fun getNowPlaying(): MoviesResponse {
+    override suspend fun getNowPlaying(): MoviesResponse {
         val networkNowPlaying = network.fetchNowPlayingMovies()
         return networkNowPlaying.toDomain()
     }

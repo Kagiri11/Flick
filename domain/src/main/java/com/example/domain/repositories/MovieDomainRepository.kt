@@ -6,17 +6,17 @@ import com.example.domain.models.reviews.ReviewsResponse
 
 interface MovieDomainRepository {
 
-    fun fetchMovieDetails(movieId: Int): Movie
+    suspend fun fetchMovieDetails(movieId: Int): Movie
 
-    fun fetchUpcomingMovies(): MoviesResponse
+    suspend fun fetchUpcomingMovies(): MoviesResponse
 
-    fun fetchTopRatedMovies(): MoviesResponse
+    suspend fun fetchTopRatedMovies(): MoviesResponse
 
-    fun fetchPopularMovies(): MoviesResponse
+    suspend fun fetchPopularMovies(): MoviesResponse
 
-    fun fetchSimilarMovies(movieId: Int): MoviesResponse
+    suspend fun fetchSimilarMovies(movieId: Int): MoviesResponse
 
-    fun fetchMovieReviews(movieId: Int): ReviewsResponse
+    suspend fun fetchMovieReviews(movieId: Int): ReviewsResponse
 
-    fun getNowPlaying(): MoviesResponse
+    suspend fun getNowPlaying(): MoviesResponse
 }
