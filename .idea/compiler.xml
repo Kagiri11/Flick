@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="Flick.app" target="11" />
+      <module name="Flick.data.cache" target="11" />
       <module name="Flick.data.network" target="11" />
       <module name="Flick.data.repository" target="11" />
       <module name="Flick.datum" target="11" />
