@@ -37,8 +37,6 @@ fun ReviewsResponseDto.toDomain(): ReviewsResponse {
         id = id,
         page = page,
         results = results.map { it.toDomain() },
-        total_pages = total_pages,
-        total_results = total_results
     )
 }
 
