@@ -4,15 +4,13 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.cache.models.MovieEntity
-import com.example.cache.models.ReviewEntity
-import kotlinx.coroutines.flow.Flow
+import com.example.cache.models.ReviewsCacheResponse
 
 @Dao
 interface ReviewsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addMovieReview(movieEntity: MovieEntity)
+    suspend fun addMovieReview(reviewsCacheResponse: ReviewsCacheResponse)
 
-    @Query("SELECT * FROM reviews_table")
-    fun getMovieReviews(): Flow<List<ReviewEntity>>
+    @Query("SELECT * FROM reviews_response_table WHERE movieId=:movieId")
+    fun getMovieReviews(movieId: Int): ReviewsCacheResponse
 }
