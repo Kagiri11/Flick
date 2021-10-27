@@ -16,8 +16,8 @@ jobs:
         run: bash ./gradlew lintDebug
 
       - name: Generate lint report
-          uses: actions/upload-artifact@v2
-          with:
-            name: lint_report.html
-            path: app/build/reports/lint-results-debug.html
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint_report.html
+          path: app/build/reports/lint-results-debug.html
 
