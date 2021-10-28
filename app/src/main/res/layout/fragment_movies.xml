@@ -55,7 +55,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
@@ -63,10 +63,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_popular_movies"
+                android:id="@+id/rv_now_playing_movies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -75,7 +75,7 @@
                 tools:listitem="@layout/item_movie" />
 
             <TextView
-                android:id="@+id/tv_top_rated_movie"
+                android:id="@+id/tv_popular_movies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -85,7 +85,7 @@
                 android:textColor="@color/textPrimaryColor"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_popular_movies" />
+                app:layout_constraintTop_toBottomOf="@id/rv_now_playing_movies" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_forward_arrow"
@@ -93,20 +93,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_arrow_forward"
-                app:layout_constraintBottom_toBottomOf="@id/tv_top_rated_movie"
+                app:layout_constraintBottom_toBottomOf="@id/tv_popular_movies"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_top_rated_movie" />
+                app:layout_constraintTop_toTopOf="@id/tv_popular_movies" />
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_top_rated_movies"
+                android:id="@+id/rv_popular_movies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/tv_top_rated_movie"
-                tools:listitem="@layout/item_toprated_movies" />
+                app:layout_constraintTop_toBottomOf="@id/tv_popular_movies"
+                tools:listitem="@layout/item_popular_movies" />
 
             <TextView
                 android:id="@+id/tv_upcoming_movie"
@@ -119,7 +119,7 @@
                 android:textColor="@color/textPrimaryColor"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_top_rated_movies" />
+                app:layout_constraintTop_toBottomOf="@id/rv_popular_movies" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_forward_arrow2"
@@ -137,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tv_upcoming_movie"
                 tools:listitem="@layout/item_upcoming_movies" />

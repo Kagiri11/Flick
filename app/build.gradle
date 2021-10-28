@@ -67,6 +67,10 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':domain')
+    implementation project(path: ':data:cache')
+    implementation project(path: ':data:network')
+    implementation project(path: ':data:repository')
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

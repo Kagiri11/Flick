@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+
 }
 
 java {
@@ -9,6 +10,7 @@ java {
 }
 
 dependencies{
+   
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$coroutines_dep"
     implementation "io.insert-koin:koin-core:$koin_version"
     testImplementation "io.insert-koin:koin-test:$koin_version"
