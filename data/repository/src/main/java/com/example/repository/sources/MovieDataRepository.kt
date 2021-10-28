@@ -1,12 +1,16 @@
 package com.example.repository.sources
 
+import com.example.cache.db.AppDataBase
 import com.example.domain.models.Movie
 import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.ReviewsResponse
 import com.example.domain.repositories.MovieDomainRepository
 import com.example.repository.mappers.toDomain
 
-class MovieDataRepository(private val network: com.example.network.MovieNetworkService) : MovieDomainRepository {
+class MovieDataRepository(
+    private val network: com.example.network.MovieNetworkService,
+    private val appDataBase: AppDataBase
+) : MovieDomainRepository {
 
     override suspend fun fetchMovieDetails(movieId: Int): Movie {
         val networkMovieDetails = network.fetchMovieDetails(movieId)

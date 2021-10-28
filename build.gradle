@@ -5,6 +5,12 @@ buildscript {
         koin_version = "3.1.2"
         retrofit_version = "2.9.0"
         coroutines_dep = "1.5.2"
+        sonarqube_version="2.7.1"
+        lifecycle_version = "2.4.0-alpha03"
+        navigation_version = "2.3.5"
+        glide_version = "4.12.0"
+        palette_version = "28.0.0"
+        fadingEdge_version = "1.0.0"
 
         room_version = "2.3.0"
         gson_version="2.8.8"
@@ -16,6 +22,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$sonarqube_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

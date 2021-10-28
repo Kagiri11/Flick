@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="130dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="230dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_top_rated_movie_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="@color/primaryColor"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_similar_movie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@drawable/ic_network"
+                android:scaleType="fitXY" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_similar_movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:textSize="11sp"
+            android:textColor="@color/textPrimaryColor"
+            android:fontFamily="@font/poppins_semibold"
+            tools:text="ghd dkhd ugc"
+            app:layout_constraintTop_toBottomOf="@id/card_top_rated_movie_image" />
+
+        <TextView
+            android:id="@+id/tv_similar_movies_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/assistiveColor"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:fontFamily="@font/poppins_semibold"
+            tools:text="ghd dkhd ugc"
+            app:layout_constraintTop_toBottomOf="@id/tv_similar_movie_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

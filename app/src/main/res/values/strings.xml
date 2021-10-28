@@ -5,4 +5,6 @@
     <string name="title_home">Home</string>
     <string name="title_network">Network</string>
     <string name="title_repository">Repository</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
