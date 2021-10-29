@@ -28,13 +28,13 @@ android {
         viewBinding true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '1.8'
     }
-    dynamicFeatures = [':data:network', ':data:repository']
+    dynamicFeatures = []
 }
 
 dependencies {
@@ -68,7 +68,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':domain')
     implementation project(path: ':data:cache')
-    implementation project(path: ':data:network')
+    implementation project(path: ':data:remote')
     implementation project(path: ':data:repository')
 
     testImplementation 'junit:junit:4.+'

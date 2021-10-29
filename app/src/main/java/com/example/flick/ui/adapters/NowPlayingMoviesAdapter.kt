@@ -10,8 +10,8 @@ import com.example.domain.models.Movie
 import com.example.flick.databinding.ItemMovieBinding
 
 class NowPlayingMoviesAdapter :
-    RecyclerView.Adapter<NowPlayingMoviesAdapter.PopularMoviesViewHolder>() {
-    class PopularMoviesViewHolder(val binding: ItemMovieBinding) :
+    RecyclerView.Adapter<NowPlayingMoviesAdapter.NowPlayingViewHolder>() {
+    class NowPlayingViewHolder(val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Movie>() {
@@ -26,14 +26,14 @@ class NowPlayingMoviesAdapter :
 
     val differ = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularMoviesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NowPlayingViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ItemMovieBinding =
             ItemMovieBinding.inflate(layoutInflater, parent, false)
-        return PopularMoviesViewHolder(binding)
+        return NowPlayingViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PopularMoviesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NowPlayingViewHolder, position: Int) {
         val movie = differ.currentList[position]
         val configuration = "https://image.tmdb.org/t/p/w500"
         val movieImage = configuration + movie.posterPath

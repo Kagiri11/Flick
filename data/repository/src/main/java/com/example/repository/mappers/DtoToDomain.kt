@@ -5,11 +5,11 @@ import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.AuthorDetails
 import com.example.domain.models.reviews.Review
 import com.example.domain.models.reviews.ReviewsResponse
-import com.example.network.models.AuthorDetailsDto
-import com.example.network.models.MovieDto
-import com.example.network.models.MoviesResponseDto
-import com.example.network.models.ReviewDto
-import com.example.network.models.ReviewsResponseDto
+import com.example.remote.models.AuthorDetailsDto
+import com.example.remote.models.MovieDto
+import com.example.remote.models.MoviesResponseDto
+import com.example.remote.models.ReviewDto
+import com.example.remote.models.ReviewsResponseDto
 
 fun AuthorDetailsDto.toDomain(): AuthorDetails {
     return AuthorDetails(

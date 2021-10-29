@@ -1,5 +1,6 @@
 package com.example.flick.ui.fragments.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.load.HttpException
@@ -18,6 +19,13 @@ class MoviesViewModel(
     private val fetchUpcomingMovies: FetchUpcomingMovies,
     private val fetchPopularMovies: FetchPopularMovies
 ) : ViewModel() {
+
+    init {
+        getNowPlayingMovies()
+        getPopularMovies()
+        getUpcomingMovies()
+    }
+
     private val _nowPlayingMovies = MutableStateFlow<UiState>(UiState.Loading)
     val nowPlayingMovies: StateFlow<UiState> = _nowPlayingMovies
 
@@ -47,13 +55,13 @@ class MoviesViewModel(
         viewModelScope.launch {
             try {
                 fetchUpcomingMovies().collect { nowPlaying ->
-                    _nowPlayingMovies.value = UiState.Success(nowPlaying)
+                    _upcomingMovies.value = UiState.Success(nowPlaying)
                 }
             } catch (e: HttpException) {
-                _nowPlayingMovies.value =
+                _upcomingMovies.value =
                     UiState.Error(e.localizedMessage ?: "Problem connecting to the internet")
             } catch (e: IOException) {
-                _nowPlayingMovies.value =
+                _upcomingMovies.value =
                     UiState.Error(e.localizedMessage ?: "An unknown error occurred")
             }
         }
@@ -63,13 +71,14 @@ class MoviesViewModel(
         viewModelScope.launch {
             try {
                 fetchPopularMovies().collect { nowPlaying ->
-                    _nowPlayingMovies.value = UiState.Success(nowPlaying)
+                    _popularMovies.value = UiState.Success(nowPlaying)
+                    Log.i("Movies ViewModel", "$nowPlaying")
                 }
             } catch (e: HttpException) {
-                _nowPlayingMovies.value =
+                _popularMovies.value =
                     UiState.Error(e.localizedMessage ?: "Problem connecting to the internet")
             } catch (e: IOException) {
-                _nowPlayingMovies.value =
+                _popularMovies.value =
                     UiState.Error(e.localizedMessage ?: "An unknown error occurred")
             }
         }

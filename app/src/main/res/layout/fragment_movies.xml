@@ -81,7 +81,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Top-Rated Movies"
+                android:text="Popular Movies"
                 android:textColor="@color/textPrimaryColor"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +98,7 @@
                 app:layout_constraintTop_toTopOf="@id/tv_popular_movies" />
 
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_popular_movies"
                 android:layout_width="match_parent"
@@ -107,6 +108,27 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tv_popular_movies"
                 tools:listitem="@layout/item_popular_movies" />
+            <ProgressBar
+                android:id="@+id/popular_progress_bar"
+                android:layout_width="40dp"
+                android:visibility="invisible"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/rv_popular_movies"
+                app:layout_constraintBottom_toBottomOf="@id/rv_popular_movies"
+                />
+
+            <TextView
+                android:id="@+id/tv_pop_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/popular_progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"/>
+
+
 
             <TextView
                 android:id="@+id/tv_upcoming_movie"

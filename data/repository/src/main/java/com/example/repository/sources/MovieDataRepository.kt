@@ -5,10 +5,11 @@ import com.example.domain.models.Movie
 import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.ReviewsResponse
 import com.example.domain.repositories.MovieDomainRepository
+import com.example.remote.MovieNetworkService
 import com.example.repository.mappers.toDomain
 
 class MovieDataRepository(
-    private val network: com.example.network.MovieNetworkService,
+    private val network: MovieNetworkService,
     private val appDataBase: AppDataBase
 ) : MovieDomainRepository {
 

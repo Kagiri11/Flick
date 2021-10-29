@@ -38,6 +38,7 @@ class PopularMoviesAdapter :
         val configuration = "https://image.tmdb.org/t/p/w500"
         val movieImage = configuration + movie.posterPath
         holder.binding.apply {
+
             tvPopularMovieName.text = movie.title
             Glide.with(this.root).load(movieImage).into(ivPopularMovieImage)
             this.root.setOnClickListener {
