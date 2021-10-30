@@ -8,7 +8,14 @@ import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.AuthorDetails
 import com.example.domain.models.reviews.Review
 import com.example.domain.models.reviews.ReviewsResponse
-import com.example.remote.models.* // ktlint-disable no-wildcard-imports
+import com.example.remote.models.AuthorDetailsDto
+import com.example.remote.models.CastDetailsDto
+import com.example.remote.models.CastDto
+import com.example.remote.models.CrewDto
+import com.example.remote.models.MovieDto
+import com.example.remote.models.MoviesResponseDto
+import com.example.remote.models.ReviewDto
+import com.example.remote.models.ReviewsResponseDto
 
 fun AuthorDetailsDto.toDomain(): AuthorDetails {
     return AuthorDetails(
