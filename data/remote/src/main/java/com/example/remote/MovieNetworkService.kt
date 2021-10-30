@@ -1,6 +1,7 @@
 package com.example.remote
 
 import com.example.domain.utils.Constants.API_KEY
+import com.example.remote.models.CastDetailsDto
 import com.example.remote.models.MovieDto
 import com.example.remote.models.MoviesResponseDto
 import com.example.remote.models.ReviewsResponseDto
@@ -58,4 +59,11 @@ interface MovieNetworkService {
         @Query("language") language: String = "en",
         @Query("page")page: Int = 1
     ): MoviesResponseDto
+
+    @GET("movie/{movie_id}/credits")
+    suspend fun fetchMovieCast(
+        @Path("movie_id") movieId: Int,
+        @Query("api_key") apiKey: String = API_KEY,
+        @Query("language") language: String = "en"
+    ): CastDetailsDto
 }

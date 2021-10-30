@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.domain.models.Movie
 import com.example.flick.databinding.ItemMovieBinding
+import com.example.flick.ui.utils.DominantColorExtractor
 
 class NowPlayingMoviesAdapter :
     RecyclerView.Adapter<NowPlayingMoviesAdapter.NowPlayingViewHolder>() {
@@ -40,7 +42,14 @@ class NowPlayingMoviesAdapter :
         holder.binding.apply {
             tvMovieName.text = movie.title
             tvMovieRating.text = movie.voteAverage.toString()
-            Glide.with(this.root).load(movieImage).into(ivMovieImage)
+            Glide.with(this.root)
+                .load(movieImage)
+                .transition(DrawableTransitionOptions.withCrossFade(500))
+                .listener(
+                    DominantColorExtractor(fadingEdgeLayout, tvMovieName, tvMovieRating)
+                )
+                .centerCrop()
+                .into(ivMovieImage)
             this.root.setOnClickListener {
                 onItemClickListener?.let {
                     it(movie)

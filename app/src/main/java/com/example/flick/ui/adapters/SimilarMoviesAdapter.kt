@@ -6,13 +6,12 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.domain.models.Movie
-import com.example.flick.databinding.ItemPopularMoviesBinding
+import com.example.flick.databinding.ItemSimilarMoviesBinding
 
-class PopularMoviesAdapter :
-    RecyclerView.Adapter<PopularMoviesAdapter.PopularMoviesViewHolder>() {
-    class PopularMoviesViewHolder(val binding: ItemPopularMoviesBinding) :
+class SimilarMoviesAdapter :
+    RecyclerView.Adapter<SimilarMoviesAdapter.SimilarMoviesViewHolder>() {
+    class SimilarMoviesViewHolder(val binding: ItemSimilarMoviesBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Movie>() {
@@ -27,24 +26,21 @@ class PopularMoviesAdapter :
 
     val differ = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularMoviesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimilarMoviesViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding: ItemPopularMoviesBinding =
-            ItemPopularMoviesBinding.inflate(layoutInflater, parent, false)
-        return PopularMoviesViewHolder(binding)
+        val binding: ItemSimilarMoviesBinding =
+            ItemSimilarMoviesBinding.inflate(layoutInflater, parent, false)
+        return SimilarMoviesViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PopularMoviesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SimilarMoviesViewHolder, position: Int) {
         val movie = differ.currentList[position]
         val configuration = "https://image.tmdb.org/t/p/w500"
         val movieImage = configuration + movie.posterPath
         holder.binding.apply {
-
-            tvPopularMovieName.text = movie.title
-            Glide.with(this.root)
-                .load(movieImage)
-                .transition(DrawableTransitionOptions.withCrossFade(500))
-                .into(ivPopularMovieImage)
+            tvSimilarMovieName.text = movie.title
+            tvSimilarMoviesRating.text = movie.voteAverage.toString()
+            Glide.with(this.root).load(movieImage).into(ivSimilarMovie)
             this.root.setOnClickListener {
                 onItemClickListener?.let {
                     it(movie)
