@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bottom_nav_color.xml" value="0.190625" />
+        <entry key="app/src/main/res/drawable/bottom_nav_curved.xml" value="0.190625" />
         <entry key="app/src/main/res/drawable/ic_back.xml" value="0.190625" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.190625" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.190625" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.190625" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.190625" />
         <entry key="app/src/main/res/drawable/specific_image_gradient.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />

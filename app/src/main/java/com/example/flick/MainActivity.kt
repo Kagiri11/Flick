@@ -2,6 +2,7 @@ package com.example.flick
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.flick.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         actionBar?.hide()
         supportActionBar?.hide()
+        window.statusBarColor = ContextCompat.getColor(this, R.color.primaryColor)
     }
 }
