@@ -7,6 +7,6 @@ import kotlinx.coroutines.flow.flowOf
 
 class FetchNowPlaying(private val repository: MovieDomainRepository) {
     suspend operator fun invoke(): Flow<List<Movie>> {
-        return flowOf(repository.getNowPlaying().results)
+        return flowOf(repository.getNowPlaying())
     }
 }

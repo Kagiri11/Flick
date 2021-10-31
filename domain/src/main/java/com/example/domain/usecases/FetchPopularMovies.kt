@@ -8,6 +8,6 @@ import kotlinx.coroutines.flow.flowOf
 class FetchPopularMovies(private val repository: MovieDomainRepository) {
     suspend operator fun invoke(): Flow<List<Movie>> {
         val result = repository.fetchPopularMovies()
-        return flowOf(result.results)
+        return flowOf(result)
     }
 }

@@ -9,5 +9,6 @@ dependencyResolutionManagement {
 rootProject.name = "Flick"
 include ':app'
 include ':domain'
-include ':data:network'
+include ':data:cache'
+include ':data:remote'
 include ':data:repository'

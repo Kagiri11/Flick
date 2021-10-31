@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    --------Upcoming UI---------
+    <color name="primaryColor">#030E2E</color>
+    <color name="secondaryColor">#262A34</color>
+    <color name="assistiveColor">#5468FF</color>
+    <color name="assistiveColor2">#5738DE</color>
+
+    --------Typography---------
+    <color name="textPrimaryColor">#FFFFFF</color>
+    <color name="textSecondaryColor">#66676D</color>
+    <color name="titlesTextColor">#F5E3E0EA</color>
+
 </resources>

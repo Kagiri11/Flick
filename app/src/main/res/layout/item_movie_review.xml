@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/primaryColor"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--region $AuthorDetails-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_author_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/wanda" />
+
+
+        <TextView
+            android:id="@+id/tv_review_author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Darlene Robertson"
+            app:layout_constraintTop_toTopOf="@id/iv_author_image"
+            app:layout_constraintStart_toEndOf="@id/iv_author_image"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/textSecondaryColor"/>
+        <!--endregion-->
+        <!--region $ReviewDetails-->
+        <ImageView
+            android:id="@+id/iv_rating_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            app:layout_constraintTop_toTopOf="@id/tv_review_author_name"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_author_name"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/tv_review_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="7.0"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toTopOf="@id/iv_rating_star"
+            app:layout_constraintBottom_toBottomOf="@id/iv_rating_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/titlesTextColor"/>
+        <TextView
+            android:id="@+id/tv_days_ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "2 days ago"
+            android:fontFamily="@font/poppins"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/tv_review_author_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_review_author_name"
+            android:textColor="@color/textSecondaryColor"/>
+        <TextView
+            android:id="@+id/tv_review"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/textPrimaryColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_author_image"
+            android:gravity="start"
+            tools:text ="Say what you want about this movie! It's great and everything. But what do you say about this app? I think you guy should hire this one. He's a keeper."/>
+
+
+
+        <!--endregion-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

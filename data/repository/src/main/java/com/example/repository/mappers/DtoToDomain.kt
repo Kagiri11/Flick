@@ -1,15 +1,21 @@
 package com.example.repository.mappers
 
+import com.example.domain.models.Cast
+import com.example.domain.models.CastDetails
+import com.example.domain.models.Crew
 import com.example.domain.models.Movie
 import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.AuthorDetails
 import com.example.domain.models.reviews.Review
 import com.example.domain.models.reviews.ReviewsResponse
-import com.example.network.models.AuthorDetailsDto
-import com.example.network.models.MovieDto
-import com.example.network.models.MoviesResponseDto
-import com.example.network.models.ReviewDto
-import com.example.network.models.ReviewsResponseDto
+import com.example.remote.models.AuthorDetailsDto
+import com.example.remote.models.CastDetailsDto
+import com.example.remote.models.CastDto
+import com.example.remote.models.CrewDto
+import com.example.remote.models.MovieDto
+import com.example.remote.models.MoviesResponseDto
+import com.example.remote.models.ReviewDto
+import com.example.remote.models.ReviewsResponseDto
 
 fun AuthorDetailsDto.toDomain(): AuthorDetails {
     return AuthorDetails(
@@ -37,8 +43,6 @@ fun ReviewsResponseDto.toDomain(): ReviewsResponse {
         id = id,
         page = page,
         results = results.map { it.toDomain() },
-        total_pages = total_pages,
-        total_results = total_results
     )
 }
 
@@ -58,5 +62,30 @@ fun MoviesResponseDto.toDomain(): MoviesResponse {
     return MoviesResponse(
         page = page,
         results = results.map { it.toDomain() }
+    )
+}
+
+fun CrewDto.toDomain(): Crew {
+    return Crew(
+        id, job, known_for_department, name, original_name
+    )
+}
+
+fun CastDto.toDomain(): Cast {
+    return Cast(
+        id = id,
+        cast_id = cast_id,
+        character = character,
+        name = name,
+        original_name = original_name,
+        profile_path = profile_path
+    )
+}
+
+fun CastDetailsDto.toDomain(): CastDetails {
+    return CastDetails(
+        id = id,
+        crew = crew.map { it.toDomain() },
+        cast = cast.map { it.toDomain() }
     )
 }
