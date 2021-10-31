@@ -1,14 +1,12 @@
 package com.example.domain.repositories
 
-import com.example.domain.models.MoviesResponse
+import com.example.domain.models.Movie
 
 interface MovieDomainRepository {
 
-    suspend fun fetchUpcomingMovies(): MoviesResponse
+    suspend fun fetchUpcomingMovies(): List<Movie>
 
-    suspend fun fetchTopRatedMovies(): MoviesResponse
+    suspend fun fetchPopularMovies(): List<Movie>
 
-    suspend fun fetchPopularMovies(): MoviesResponse
-
-    suspend fun getNowPlaying(): MoviesResponse
+    suspend fun getNowPlaying(): List<Movie>
 }

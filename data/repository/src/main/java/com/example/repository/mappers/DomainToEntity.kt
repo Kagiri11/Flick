@@ -1,10 +1,12 @@
 package com.example.repository.mappers
 
 import com.example.cache.models.AuthorEntityDetails
-import com.example.cache.models.MovieEntity
-import com.example.cache.models.MovieResponseEntity
 import com.example.cache.models.ReviewEntity
 import com.example.cache.models.ReviewsCacheResponse
+import com.example.cache.models.popularmovies.PopularMovieEntity
+import com.example.cache.models.topRatedMovies.NowPlayingMovieEntity
+import com.example.cache.models.upcomingmovies.UpcomingMovieEntity
+import com.example.cache.models.upcomingmovies.UpcomingMovieResponseEntity
 import com.example.domain.models.Movie
 import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.AuthorDetails
@@ -19,15 +21,27 @@ fun ReviewsResponse.toEntity(): ReviewsCacheResponse {
     )
 }
 
-fun MoviesResponse.toEntity(): MovieResponseEntity {
-    return MovieResponseEntity(
+fun MoviesResponse.toEntity(): UpcomingMovieResponseEntity {
+    return UpcomingMovieResponseEntity(
         page = page,
         results = results.map { it.toEntity() }
     )
 }
 
-fun Movie.toEntity(): MovieEntity {
-    return MovieEntity(
+fun Movie.toEntity(): UpcomingMovieEntity {
+    return UpcomingMovieEntity(
+        id, title, posterPath, releaseDate, overview, voteAverage
+    )
+}
+
+fun Movie.toPopularEntity(): PopularMovieEntity {
+    return PopularMovieEntity(
+        id, title, posterPath, releaseDate, overview, voteAverage
+    )
+}
+
+fun Movie.toTopRatedEntity(): NowPlayingMovieEntity {
+    return NowPlayingMovieEntity(
         id, title, posterPath, releaseDate, overview, voteAverage
     )
 }

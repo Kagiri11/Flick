@@ -4,10 +4,37 @@ import com.example.cache.models.AuthorEntityDetails
 import com.example.cache.models.MovieEntity
 import com.example.cache.models.ReviewEntity
 import com.example.cache.models.ReviewsCacheResponse
+import com.example.cache.models.topRatedMovies.NowPlayingMovieEntity
+import com.example.cache.models.upcomingmovies.UpcomingMovieEntity
+import com.example.cache.models.upcomingmovies.UpcomingMovieResponseEntity
 import com.example.domain.models.Movie
+import com.example.domain.models.MoviesResponse
 import com.example.domain.models.reviews.AuthorDetails
 import com.example.domain.models.reviews.Review
 import com.example.domain.models.reviews.ReviewsResponse
+
+fun UpcomingMovieEntity.toDomain(): Movie {
+    return Movie(
+        id = id,
+        title = title,
+        posterPath, releaseDate, overview, voteAverage
+    )
+}
+
+fun NowPlayingMovieEntity.toDomain(): Movie {
+    return Movie(
+        id = id,
+        title = title,
+        posterPath, releaseDate, overview, voteAverage
+    )
+}
+
+fun UpcomingMovieResponseEntity.toDomain(): MoviesResponse {
+    return MoviesResponse(
+        page = page,
+        results = results.map { it.toDomain() }
+    )
+}
 
 fun AuthorEntityDetails.toDomain(): AuthorDetails {
     return AuthorDetails(

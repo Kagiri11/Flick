@@ -35,6 +35,9 @@ dependencies {
     //Koin
     implementation "io.insert-koin:koin-android:$koin_version"
 
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_dep"
+
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation project(path: ':domain')
     implementation project(path: ':data:cache')

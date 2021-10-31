@@ -15,4 +15,6 @@ val cacheModule = module {
             .fallbackToDestructiveMigration()
             .build()
     }
+    single { get<AppDataBase>().moviesDao() }
+    single { get<AppDataBase>().reviewsDao() }
 }

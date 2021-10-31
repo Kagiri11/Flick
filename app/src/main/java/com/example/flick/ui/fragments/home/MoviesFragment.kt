@@ -42,6 +42,12 @@ class MoviesFragment : Fragment() {
             }
             findNavController().navigate(R.id.action_moviesFragment_to_movieDetailsFragment, bundle)
         }
+        upcomingMoviesAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("movie", it)
+            }
+            findNavController().navigate(R.id.action_moviesFragment_to_movieDetailsFragment, bundle)
+        }
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
@@ -99,11 +105,7 @@ class MoviesFragment : Fragment() {
     }
 
     private fun initUpcomingMovies(upcomingMovies: List<Movie>) {
-        upcomingMoviesAdapter.setOnItemClickListener {
-            val bundle = Bundle().apply {
-                putSerializable("movie", it)
-            }
-        }
+
         upcomingMoviesAdapter.differ.submitList(upcomingMovies)
         binding.rvUpcomingMovies.adapter = upcomingMoviesAdapter
     }
