@@ -8,6 +8,7 @@ import com.example.domain.usecases.FetchPopularMovies
 import com.example.domain.usecases.FetchSimilarMovies
 import com.example.domain.usecases.FetchTopRatedMovies
 import com.example.domain.usecases.FetchUpcomingMovies
+import com.example.domain.usecases.SearchMovies
 import org.koin.dsl.module
 
 val domainModule = module {
@@ -17,8 +18,7 @@ val domainModule = module {
     single { FetchNowPlaying(get()) }
     single { FetchMovieCast(get()) }
     single { FetchPopularMovies(get()) }
-    single {
-        FetchTopRatedMovies(get())
-        FetchUpcomingMovies(get())
-    }
+    single { FetchTopRatedMovies(get()) }
+    single { FetchUpcomingMovies(get()) }
+    single { SearchMovies(get()) }
 }

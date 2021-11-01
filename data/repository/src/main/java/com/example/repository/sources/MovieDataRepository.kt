@@ -14,12 +14,12 @@ class MovieDataRepository(
     private val moviesDao: MoviesDao
 ) : MovieDomainRepository {
 
-    override suspend fun fetchUpcomingMovies(): List<Movie> {
+    override suspend fun fetchUpcomingMovies(pageNumber: Int): List<Movie> {
         val cachedMovies = moviesDao.getUpcomingMovies()
         return if (cachedMovies.isNotEmpty()) {
             cachedMovies.map { it.toDomain() }
         } else {
-            val networkUpcomingMovies = network.fetchUpcomingMovies()
+            val networkUpcomingMovies = network.fetchUpcomingMovies(pageNumber = pageNumber)
             networkUpcomingMovies.results.forEach {
                 moviesDao.addUpcomingMovies(it.toDomain().toEntity())
             }
@@ -38,6 +38,11 @@ class MovieDataRepository(
             }
             networkNowPlayingMovies.results.map { it.toDomain() }
         }
+    }
+
+    override suspend fun searchMovies(query: String): List<Movie> {
+        val searchedMovies = network.searchMovies(query)
+        return searchedMovies.results.map { it.toDomain() }
     }
 
     override suspend fun fetchPopularMovies(): List<Movie> {

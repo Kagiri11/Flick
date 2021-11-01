@@ -21,8 +21,14 @@ interface MovieNetworkService {
     @GET("movie/upcoming")
     suspend fun fetchUpcomingMovies(
         @Query("api_key") apiKey: String = API_KEY,
-        @Query("page") pageNumber: Int = 1,
+        @Query("page") pageNumber: Int,
         @Query("language") language: String = "en"
+    ): MoviesResponseDto
+
+    @GET("search/movie")
+    suspend fun searchMovies(
+        @Query("query") query: String,
+        @Query("api_key") apiKey: String = API_KEY
     ): MoviesResponseDto
 
     @GET("movie/top_rated")

@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext{
+        paging_version = "3.0.1"
         kotlin_gradle = "1.5.10"
         koin_version = "3.1.2"
         retrofit_version = "2.9.0"

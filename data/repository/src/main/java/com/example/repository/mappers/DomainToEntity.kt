@@ -30,19 +30,19 @@ fun MoviesResponse.toEntity(): UpcomingMovieResponseEntity {
 
 fun Movie.toEntity(): UpcomingMovieEntity {
     return UpcomingMovieEntity(
-        id, title, posterPath, releaseDate, overview, voteAverage
+        id, title, posterPath ?: "", releaseDate, overview ?: "", voteAverage
     )
 }
 
 fun Movie.toPopularEntity(): PopularMovieEntity {
     return PopularMovieEntity(
-        id, title, posterPath, releaseDate, overview, voteAverage
+        id, title, posterPath ?: "", releaseDate, overview!!, voteAverage
     )
 }
 
 fun Movie.toTopRatedEntity(): NowPlayingMovieEntity {
     return NowPlayingMovieEntity(
-        id, title, posterPath, releaseDate, overview, voteAverage
+        id, title, posterPath ?: "", releaseDate, overview ?: "", voteAverage
     )
 }
 

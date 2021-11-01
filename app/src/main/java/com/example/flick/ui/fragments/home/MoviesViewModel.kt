@@ -20,6 +20,8 @@ class MoviesViewModel(
     private val fetchPopularMovies: FetchPopularMovies
 ) : ViewModel() {
 
+    private var upcomingMoviesPage = 2
+
     init {
         getNowPlayingMovies()
         getPopularMovies()
@@ -54,7 +56,7 @@ class MoviesViewModel(
     private fun getUpcomingMovies() {
         viewModelScope.launch {
             try {
-                fetchUpcomingMovies().collect { nowPlaying ->
+                fetchUpcomingMovies(upcomingMoviesPage).collect { nowPlaying ->
                     _upcomingMovies.value = UiState.Success(nowPlaying)
                 }
             } catch (e: HttpException) {

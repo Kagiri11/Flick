@@ -5,10 +5,10 @@
         android:title="Movies"
         android:icon="@drawable/ic_home"/>
 
-    <item android:id="@+id/searchFragment"
+    <item android:id="@+id/searchFragment2"
         android:title="Search"
         android:icon="@drawable/ic_search"/>
-    <item android:id="@+id/settingsFragment"
-        android:title="Movies"
+    <item android:id="@+id/settingsFragment2"
+        android:title="Settings"
         android:icon="@drawable/ic_settings"/>
 </menu>

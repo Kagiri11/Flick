@@ -67,7 +67,7 @@ class MovieDetailsFragment : Fragment() {
                                 val movieImage = configuration + mov.posterPath
                                 Glide.with(requireContext()).load(movieImage)
                                     .into(binding.ivSpecificMovieImage)
-                                binding.tvMovieSynopsis.text = mov.overview.take(200)
+                                binding.tvMovieSynopsis.text = mov.overview?.take(200)
                                 binding.tvSpecificMovieRating.text = mov.voteAverage.toString()
                                 binding.tvSpecificMovieName.text = mov.title
                                 binding.tvSpecificMovieYear.text = mov.releaseDate

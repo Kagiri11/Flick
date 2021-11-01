@@ -23,4 +23,18 @@
             android:name="movie"
             app:argType="com.example.domain.models.Movie" />
     </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.flick.ui.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment2_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.flick.ui.fragments.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

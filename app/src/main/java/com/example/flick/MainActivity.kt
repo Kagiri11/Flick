@@ -3,6 +3,8 @@ package com.example.flick
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.flick.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,5 +16,6 @@ class MainActivity : AppCompatActivity() {
         actionBar?.hide()
         supportActionBar?.hide()
         window.statusBarColor = ContextCompat.getColor(this, R.color.primaryColor)
+        binding.bottomNav.setupWithNavController(findNavController(R.id.navHostFragment))
     }
 }

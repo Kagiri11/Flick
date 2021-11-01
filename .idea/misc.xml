@@ -14,10 +14,12 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/fragment_movie_details.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_movies.xml" value="0.16041666666666668" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/item_movie.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_movie_cast.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_movie_review.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_popular_movies.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/item_search.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/item_similar_movies.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/item_toprated_movies.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/item_upcoming_movies.xml" value="0.17447916666666666" />
