@@ -119,8 +119,11 @@ In this section i've included some resources ie. articles and GitHub repositorie
 
 # Screenshots
 These are the app's screenshots:
+![Screenshot_2021-10-31-17-32-18-60_google-pixel4-clearlywhite-portrait](https://user-images.githubusercontent.com/59829833/139813023-714cc762-6d01-42e7-9b26-8e9541030106.png)
 
-<img src="assets/img1.png" width="250"/><img src="assets/img1.1.png" width="250"/> <img src="assets/img2.png" width="250"/>
+
+
+<img src="assets/img1.png" width="250"/><img src="https://user-images.githubusercontent.com/59829833/139813023-714cc762-6d01-42e7-9b26-8e9541030106.png" width="250"/> <img src="assets/img2.png" width="250"/>
 
 <img src="assets/img3.png" width="250"/> <img src="assets/img3.1.png" width="250"/> <img src="assets/img4.png" width="250"/>
 
