@@ -119,8 +119,7 @@ In this section i've included some resources ie. articles and GitHub repositorie
 
 # Screenshots
 These are the app's screenshots:
-<img src="assets/img1.png" width="250"/><img src="https://user-images.githubusercontent.com/59829833/139813023-714cc762-6d01-42e7-9b26-8e9541030106.png" width="250"/> 
-
-<img src="assets/img3.png" width="250"/> <img src="https://user-images.githubusercontent.com/59829833/139813327-c4062c17-fb24-4fe6-a1a5-01f61a9ed81c.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/59829833/139813023-714cc762-6d01-42e7-9b26-8e9541030106.png" width="250"/> 
+<img src="https://user-images.githubusercontent.com/59829833/139813327-c4062c17-fb24-4fe6-a1a5-01f61a9ed81c.png" width="250"/>
 
  
