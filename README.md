@@ -1,8 +1,7 @@
 # Flick
 
-An android app built using Kotlin that consumes [IMDB API]("https://developer.imdb.com/") to display current trending, upcoming and popular movies🍿 and tvshows🎬. It has been built following Clean Architecture Principle, Repository Pattern, MVVM Architecture in the presentation layer as well as Jetpack components.
+An android app built using Kotlin that consumes [TMDB API]("https://developers.themoviedb.org/3") to display current trending, upcoming and popular movies🍿.It has been built following Clean Architecture Principle, Repository Pattern, MVVM Architecture in the presentation layer as well as Jetpack components.
 
-> Download the apk [here](https://drive.google.com/file/d/17gj0Kb-mey6kQlo8sK2MIaKrvJEsdoq8/view?usp=sharing)
 
 ## Table Of Content.
 
@@ -26,8 +25,7 @@ So let's get started ...
 ### What is Clean Architecture?
 
 Clean architecture was proposed by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in 2012 in the [Clean Code Blog](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and it follows the SOLID principles.
-
-<p align="center"><img src="assets/architecture.png" alt="Clean Architecture Diagram"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/59829833/139816708-997f67d9-8107-446b-a5ea-65e76b638d59.jpeg" alt="Clean Architecture Diagram" width="250"></p>
 
 The circles represent different layers of your app. Note that:
 
@@ -106,7 +104,7 @@ This project uses many of the popular libraries, plugins and tools of the androi
 - [Mockito](https://site.mockito.org/) - Mocking framework for tests.
 
 ## Extras
-- [GitHub Actions](https://github.com/VictorKabata/Notflix/actions) - GitHub actions is used in this project to check for syntax correctness using linting, execute the unit tests, generate a new package and deploying the apk using [Firebase App Distribution](https://firebase.google.com/docs/app-distribution) when pushing changes to the dev branch or when making a pull request to the main branch.
+- [GitHub Actions](https://github.com/Kagiri11/Flick/actions) - GitHub actions is used in this project to check for syntax correctness using linting when pushing changes to the dev branch or when making a pull request to the main branch.
 
 # Helpful Resources
 In this section i've included some resources ie. articles and GitHub repositories that are helpful when learning about clean architecture:
@@ -119,6 +117,7 @@ In this section i've included some resources ie. articles and GitHub repositorie
 
 # Screenshots
 These are the app's screenshots:
+
 <img src="https://user-images.githubusercontent.com/59829833/139813023-714cc762-6d01-42e7-9b26-8e9541030106.png" width="250"/> 
 <img src="https://user-images.githubusercontent.com/59829833/139813327-c4062c17-fb24-4fe6-a1a5-01f61a9ed81c.png" width="250"/>
 
